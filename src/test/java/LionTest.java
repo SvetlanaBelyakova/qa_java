@@ -8,6 +8,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 import static org.junit.Assert.*;
 
+
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
     private Feline feline;
@@ -50,9 +51,7 @@ public class LionTest {
     public void shouldThrowExceptionForInvalidSex() {
         Feline feline = new Feline();
         // Проверяем, что при передаче некорректного значения пола будет выброшено исключение
-        Exception exception = assertThrows(Exception.class, () -> {
-            new Lion("Неизвестно", feline);
-        });
+        Exception exception = assertThrows(Exception.class, () -> new Lion("Неизвестно", feline));
         // Проверяем, что сообщение исключения соответствует ожидаемому
         assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
     }
